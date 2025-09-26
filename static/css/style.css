@@ -1,0 +1,28 @@
+p {
+    color: darkslateblue; /*Rule 1: styles text with color*/
+    font-size: 1.2em; /*Rule 2: increases the font size by 1.2*/
+}
+p#special{
+    color: darkslategray;
+    font-size: 14px;
+}
+h2 {
+    color: darkred;/*Rule 1: styles text with color*/
+    font-size: 2em;/*Rule 3: doubles the font size*/
+}
+.head-edit {
+    text-decoration: underline;/*Rule 1: underlines the header*/
+    font-family: "Times New Roman", Times, serif; /*Rule 2: changes the font to times new roman*/
+
+}
+table, td, th {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-collapse: collapse;
+} /*Code above underlines the header*/
+
+img.logo { /* Dimensioning the image*/
+    width: 212px ;
+    height: 88px;
+}
