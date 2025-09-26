@@ -4,7 +4,7 @@ p {
 }
 p#special{
     color: darkslategray;
-    font-size: 20px;
+    font-size: 22px;
 }
 h2 {
     color: darkred;/*Rule 1: styles text with color*/
@@ -20,7 +20,8 @@ table, td, th {
     border-width: 2px;
     border-color: black;
     border-collapse: collapse;
-} /*Code above underlines the header*/
+    font-size: 20px;
+} /*Code above formats a table*/
 
 img.logo { /* Dimensioning the image*/
     width: 212px ;
