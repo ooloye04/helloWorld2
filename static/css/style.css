@@ -1,6 +1,6 @@
 p {
     color: darkslateblue; /*Rule 1: styles text with color*/
-    font-size: 1.2em; /*Rule 2: increases the font size by 1.2*/
+    font-size: 1.7em; /*Rule 2: increases the font size by 1.2*/
 }
 p#special{
     color: darkslategray;
