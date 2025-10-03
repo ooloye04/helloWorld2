@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greeting File Using JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <h1> Working with JavaScript</h1>
+
+    <p id="special-two">On this page, I am working with JavaScript. I will be completing tasks such as buttons,
+    forms, lists, checkboxes, etc. Stay tuned for the display of these skills</p>
+    <button onclick="changeText()">Change Text</button>
+
+    <h2>Enter your name below</h2>
+
+    <label for="nameInput">Name:</label>
+    <input type="text" id="nameInput">
+    <button onclick="greeting()">Submit</button>
+
+    <p>My favorite foods are:</p>
+    <ul id="foodList"></ul>
+
+    <p>Guess which courses David Oloye have taken</p>
+
+    <input type="checkbox" name="courses" value="ENGL393">ENGL393
+    <input type="checkbox" name="courses" value="ENCE201">ENCE201
+    <input type="checkbox" name="courses" value="BMGT438A">BMGT438A
+    <button onclick="chooseCourses()">Submit</button>
+
+<button type="button" class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#demo">
+      Simple collapsible
+</button>
+
+    <div id="demo" class="collapse mt-2">
+        <h2>Boostrap Collapse</h2>
+        <p>The collapse component becomes a really useful tool for user experiences when presenting a lot of information on a website.
+            It reduces visual stimulation and focuses the users attention on the one thing they want to focus on. This creates a smoother
+            browsing experience while on your page.</p>
+    </div>
+
+
+<script src="../static/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>

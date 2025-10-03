@@ -6,6 +6,9 @@ p#special{
     color: darkslategray;
     font-size: 22px;
 }
+p#special-two {
+    font-family: "Times New Roman", Times, serif; /*Rule 1: changes the font
+}
 h2 {
     color: darkred;/*Rule 1: styles text with color*/
     font-size: 2em;/*Rule 3: doubles the font size*/
@@ -26,4 +29,14 @@ table, td, th {
 img.logo { /* Dimensioning the image*/
     width: 212px ;
     height: 88px;
+}
+
+input, button {
+    padding: 10px;
+    font-size: 18px;
+}
+
+button {
+  cursor: pointer;
+  margin-left: 5px;
 }
