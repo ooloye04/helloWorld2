@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
@@ -24,5 +24,28 @@ def about_css():
 def greeting_java():
     return render_template('greeting.html')
 
+@app.route("/favorite-course")
+def favorite_course():
+    print('You have entered your favorite course as: ' + request.args.get('subject') + request.args.get('course_number'))
+    return render_template('favorite-course.html')
+
+@app.route("/contact", methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        print('First Name' + request.form.get('first_name'))
+        print('Last Name' + request.form.get('last_name'))
+        print('Email' + request.form.get('email'))
+        print('Job Title' + request.form.get('job_title'))
+
+        if request.form.get('agree_check'):
+                print('Agree to be contacted: ' + request.form.get('agree_check'))
+
+    return render_template('contact.html')
+
 if __name__ == '__main__':
     app.run()
+
+#print('You have entered your favorite course as: ' + request.args.get('first_name'))
+#print('You have entered your favorite course as: ' + request.args.get('last_name'))
+#print('You have entered your favorite course as: ' + request.args.get('email'))
+#print('You have entered your favorite course as: ' + request.args.get('job_title'))
