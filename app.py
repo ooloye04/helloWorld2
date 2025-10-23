@@ -3,7 +3,6 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def hello_world():  # put application's code here
     return 'Hello World from David Oloye! I am adding my first code change'
@@ -26,7 +25,7 @@ def greeting_java():
 
 @app.route("/favorite-course")
 def favorite_course():
-    print('You have entered your favorite course as: ' + request.args.get('subject') + request.args.get('course_number'))
+    print('You have entered your favorite course as: ', request.args.get('subject'), request.args.get('course_number'))
     return render_template('favorite-course.html')
 
 @app.route("/contact", methods=['GET', 'POST'])
