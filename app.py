@@ -25,8 +25,19 @@ def greeting_java():
 
 @app.route("/favorite-course")
 def favorite_course():
-    print('You have entered your favorite course as: ', request.args.get('subject'), request.args.get('course_number'))
-    return render_template('favorite-course.html')
+    # get the query parameters from the URL
+    subject = request.args.get('subject')
+    course_number = request.args.get('course_number')
+
+    # print to the terminal (optional, for debugging)
+    print('You entered your favorite course as:', subject, course_number)
+
+    # pass both values into the HTML template
+    return render_template(
+        "favorite-course.html",
+        subject=subject,
+        course_number=course_number
+    )
 
 @app.route("/contact", methods=['GET', 'POST'])
 def contact():
