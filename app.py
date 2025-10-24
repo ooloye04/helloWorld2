@@ -34,13 +34,12 @@ def contact():
                 print('Agree to be contacted: ' + request.form.get('agree_check'))
 
     return render_template('contact.html')
-@app.route("/favorite-courses")
+
+@app.route("/favorite-course")
 def favorite_course():
-    return render_template('favorite-courses.html')
+    print('You have entered your favorite course as:', request.args.get('subject'), request.args.get('course_number'))
+
+    return render_template('favorite-course.html')
+
 if __name__ == '__main__':
     app.run()
-
-#print('You have entered your favorite course as: ' + request.args.get('first_name'))
-#print('You have entered your favorite course as: ' + request.args.get('last_name'))
-#print('You have entered your favorite course as: ' + request.args.get('email'))
-#print('You have entered your favorite course as: ' + request.args.get('job_title'))

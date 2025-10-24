@@ -1,38 +1,81 @@
 {% extends "base.html" %}
 
-{% block title %}Contact Form{% endblock %}
+{% block page_title %}Contact Form{% endblock %}
 
-{% block content %}
+{% block page_head %}Contact Form{% endblock %}
 
-<h2> Contact Form </h2>
-<form class="row g-3" action="{{ url_for('contact') }} " method="post">
-    <div class="col-6">
-        <label for="first_name" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="first_name" name="first_name">
-    </div>
-    <div class="col-6">
-        <label for="last_name" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="last_name" name="last_name">
-    </div>
-    <div class="col-8">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email">
-    </div>
-    <div class="col-6">
-        <label for="job_title" class="form-label">Job Title</label>
-        <input type="text" class="form-control" id="job_title" name="job_title">
-    </div>
+{% block page_content %}
+    <div class="container">
 
-    <div class="col-12">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="agree_check" name="agree-check">
-            <label class="form-check-label" for="agree_check">
-                I agree to be contacted
-            </label>
+    {% if form_submitted %}
+        <div class="col-12">
+             <h2> Thank you for completing the form</h2>
         </div>
+        <div class="col-6">
+            <p>First Name: </p>
+        </div>
+        <div class="col-6">
+            <p>{{request.form.get('first_name')}} </p>
+        </div>
+        <div class="col-6">
+            <p>Last Name: </p>
+        </div>
+        <div class="col-6">
+            <p>{{request.form.get('last_name')}} </p>
+        </div>
+        <div class="col-6">
+            <p>Email: </p>
+        </div>
+        <div class="col-6">
+            <p>{{request.form.get('email')}} </p>
+        </div>
+        <div class="col-6">
+            <p>Job Title: </p>
+        </div>
+        <div class="col-6">
+            <p>{{request.form.get('job_title')}} </p>
+        </div>
+
+        <div class="col-8">
+            <p>Agree to be contacted</p>
+        </div>
+        <div class="col-6">
+            <p>{{ 'Yes' if request.form.get('agree_check') else 'No'}} </p>
+        </div>
+        <p><a href="{{url_for('contact')}}">Please Complete Form</a></p>
+
+    {% else %}
+
+    <form class="row g-3" action="{{ url_for('contact') }} " method="post">
+        <div class="col-6">
+            <label for="first_name" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="first_name" name="first_name">
+        </div>
+        <div class="col-6">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="last_name" name="last_name">
+        </div>
+        <div class="col-8">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="col-6">
+            <label for="job_title" class="form-label">Job Title</label>
+            <input type="text" class="form-control" id="job_title" name="job_title">
+        </div>
+
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="agree_check" name="agree-check">
+                <label class="form-check-label" for="agree_check">
+                    I agree to be contacted
+                </label>
+            </div>
+        </div>
+        <div class ="col-12">
+            <button type="submit" class="btn btn-primary">Submit Form</button>
+        </div>
+    </form>
+    {% endif %}
     </div>
-    <div class ="col-12">
-        <button type="submit" class="btn btn-primary">Submit Form</button>
-    </div>
-</form>
-{% endbock %}
+{% endblock %}
