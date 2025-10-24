@@ -25,15 +25,17 @@ def greeting_java():
 @app.route("/contact", methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
-        print('First Name' + request.form.get('first_name'))
-        print('Last Name' + request.form.get('last_name'))
-        print('Email' + request.form.get('email'))
-        print('Job Title' + request.form.get('job_title'))
+        #print('First Name' + request.form.get('first_name'))
+        #print('Last Name' + request.form.get('last_name'))
+        #print('Email' + request.form.get('email'))
+        #print('Job Title' + request.form.get('job_title'))
+        return render_template('contact.html', form_submitted=True)
+    else:
+        return render_template('contact.html')
+        #if request.form.get('agree_check'):
+                #print('Agree to be contacted: ' + request.form.get('agree_check'))
 
-        if request.form.get('agree_check'):
-                print('Agree to be contacted: ' + request.form.get('agree_check'))
-
-    return render_template('contact.html')
+    #return render_template('contact.html')
 
 @app.route("/favorite-course")
 def favorite_course():
