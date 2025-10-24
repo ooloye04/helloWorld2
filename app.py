@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -23,22 +22,6 @@ def about_css():
 def greeting_java():
     return render_template('greeting.html')
 
-@app.route("/favorite-course")
-def favorite_course():
-    # get the query parameters from the URL
-    subject = request.args.get('subject')
-    course_number = request.args.get('course_number')
-
-    # print to the terminal (optional, for debugging)
-    print('You entered your favorite course as:', subject, course_number)
-
-    # pass both values into the HTML template
-    return render_template(
-        "favorite-course.html",
-        subject=subject,
-        course_number=course_number
-    )
-
 @app.route("/contact", methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
@@ -51,7 +34,9 @@ def contact():
                 print('Agree to be contacted: ' + request.form.get('agree_check'))
 
     return render_template('contact.html')
-
+@app.route("/favorite-courses")
+def favorite_course():
+    return render_template('favorite-courses.html')
 if __name__ == '__main__':
     app.run()
 
