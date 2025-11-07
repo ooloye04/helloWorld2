@@ -18,7 +18,7 @@ with app.app_context():
         db.session.commit()
 
     # Initial loading of users
-    users = [
+    user = [
         {'username': 'student', 'email': 'student@umd.edu', 'first_name':'Imma', 'last_name':'Student',
             'password': generate_password_hash('studentpw', method='pbkdf2:sha256'), 'role':'STUDENT'},
         {'username': 'manager', 'email': 'manager@umd.edu', 'first_name':'Joe', 'last_name':'King',
@@ -29,7 +29,7 @@ with app.app_context():
             'password': generate_password_hash('thisispw', method='pbkdf2:sha256'), 'role': 'STUDENT'},
     ]
 
-    for each_user in users:
+    for each_user in user:
         print(f'{each_user["username"]} inserted into user')
         a_user = User(username=each_user["username"], email=each_user["email"], first_name=each_user["first_name"],
                       last_name=each_user["last_name"], password=each_user["password"], role=each_user["role"])
